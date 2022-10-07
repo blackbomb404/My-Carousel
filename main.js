@@ -39,6 +39,8 @@ trackers.addEventListener('click', e => {
 const observer = new ResizeObserver(entries => {
     entries.forEach(entry => {
         carouselCurrentWidth = entry.contentRect.width;
+
+        slides.scrollTo({left: carouselCurrentWidth * currentItemIndex, behavior: 'auto'});
     })
 });
 observer.observe(carousel);
